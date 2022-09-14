@@ -1,10 +1,10 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
 from chatterbox.models import Room, Message
 
 
+# Create your views here.
 def hello(request, s):
     return HttpResponse(f'Hello, {s} world!')
 
@@ -25,8 +25,8 @@ def search(request, s):
 
 
 def room(request, pk):
-    room = Room.objects.get(id=pk) # najdeme místnost se zadaným id
-    messages = Message.objects.filter(room=pk) # vybereme všechny zprávy dané místnosti
+    room = Room.objects.get(id=pk)  # najdeme místnost se zadaným id
+    messages = Message.objects.filter(room=pk)  # vybereme všechny zprávy dané místnosti
 
     context = {'room': room, 'messages': messages}
     return render(request, "chatterbox/room.html", context)

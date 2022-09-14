@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of current page</title> <!-- bude se dynamicky měnit -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Chatterbox</header>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Create room</a></li>  <!-- only if logged in -->
+        <li><a href="/">Rooms</a></li>  <!-- only if logged in -->
+        <li class="last-item"><a href="">Login/Signup</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="room-descr">
+        You are in room <b>Room name</b> <br>
+        Description: Description of the room.
+    </div>
+
+    <div class="message-form">
+        <form action="" method="POST">
+            <label for="body">Message: </label>
+            <textarea name="body" id="body" rows="1" cols="100"> </textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <div class="messages-box">
+        <div class="other-message">Nějaká zpráva od uživatele.</div>
+        <div class="my-message">Moje zpráva.</div>
+        <div class="other-message">Nějaká zpráva od uživatele.</div>
+        <div class="my-message">Moje zpráva.</div>
+    </div>
+</main>
+
+</body>
+</html>
