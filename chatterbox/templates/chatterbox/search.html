@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main.html' %}
+
+{% block content %}
     <h1>Výsledky hledání</h1>
     <h2>Rooms:</h2>
     <ul>
@@ -15,8 +11,7 @@
     <h2>Messages:</h2>
     <ul>
         {% for message in messages %}
-            <li>{{ message.user }}: {{ message.body }}</li>
+            <li><b>{{ message.user }}:</b> {{ message.body }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
