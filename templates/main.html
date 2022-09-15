@@ -3,13 +3,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'chatterbox/style.css' %}"/>
 </head>
+
 <body>
-    <h1>Chatterbox</h1>
-    {% include 'navbar.html'%}
+
+<header>Chatterbox</header>
+
+{% include 'navbar.html' %}
+
+<main>
     {% block content %}{% endblock %}
+</main>
 
 </body>
 </html>

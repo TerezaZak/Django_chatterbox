@@ -23,6 +23,11 @@ nav li {
 }
 
 /* home.html */
+.user_hello {
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
 .welcome {
     font-size: 32px;
 }
