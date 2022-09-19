@@ -9,7 +9,8 @@
     </div>
 
     <div class="message-form">
-        <form action="" method="POST"> <!-- TODO add action -->
+        <form action="" method="POST">
+            {% csrf_token %}
             <label for="body">Message: </label>
             <textarea name="body" id="body" rows="1" cols="100"> </textarea>
             <input type="submit" value="Send">
@@ -18,8 +19,23 @@
 
     <div class="messages-box">
     {% for message in messages %}
-        <div class="other-message"><b>{{ message.user }}:</b> {{ message.body }}</div>
-        <!-- TODO add my-message -->
+        {% if message.user == request.user %}
+            <div class="my-message">
+                <div class="my-message-info">
+                    <span class="message-user">{{ message.user }}</span>
+                    <span class="message-time">{{ message.created }}</span>
+                </div>
+                <div class="my-message-body">{{ message.body }}</div>
+            </div>
+        {% else %}
+            <div class="other-message">
+                <div class="other-message-info">
+                    <span class="message-user">{{ message.user }}</span>
+                    <span class="message-time">{{ message.created }}</span>
+                </div>
+                <div class="other-message-body">{{ message.body }}</div>
+            </div>
+        {% endif %}
     {% endfor %}
     </div>
 {% endblock %}

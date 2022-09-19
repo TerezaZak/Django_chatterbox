@@ -62,7 +62,7 @@ input[type=submit] {
 .messages-box {
 }
 
-.other-message {
+.other-message-body {
     background: white;
     width: 80%;
     border: solid 3px #4432a8;
@@ -72,6 +72,30 @@ input[type=submit] {
 }
 
 .my-message {
+
+}
+
+.my-message-info {
+    font-size: 14px;
+    width: 20%;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.other-message-info {
+    font-size: 14px;
+    width: 20%;
+}
+
+.message-user {
+    font-weight: bold;
+}
+
+.message-time {
+    font-style: italic;
+}
+
+.my-message-body {
     background: white;
     width: 80%;
     border: solid 3px #b81a51;
@@ -100,3 +124,4 @@ input[type=submit] {
 .form-row {
     margin-bottom: 15px;
 }
+
