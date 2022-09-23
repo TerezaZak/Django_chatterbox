@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'chatterbox',   #naše aplikace v rámci projektu
     'accounts',
+
+    'profiles',
 ]
 
 MIDDLEWARE = [
