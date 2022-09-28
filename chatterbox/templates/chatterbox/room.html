@@ -6,14 +6,13 @@
     <div class="room-descr">
         You are in room <b>{{ room.name }}</b> <br>
         Description: {{ room.description }}
-    </div>
 
     <div class="message-form">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" >
             {% csrf_token %}
             <label for="body">Message: </label>
             <textarea name="body" id="body" rows="1" cols="100"> </textarea>
-            <input type="file" name="upload" accept="image/*">
+            <input type="file" name="upload" accept="image/*"> <!-- dovoli vklada aj subor, resp obrazok-->
             <input type="submit" value="Send">
         </form>
     </div>
@@ -27,7 +26,7 @@
                     <span class="message-time">{{ message.created }}</span>
                 </div>
                 <div class="my-message-body">{{ message.body }}</div>
-                {% if message.file %}  <!-- TODO add in form -->
+                {% if message.file %} <!-- zobrazi file/obrazok -->
                     <div class="my-message-file">
                         <a href="{{ message.file }}"><img src="{{ message.file }}" width="50px"></a>
                     </div>
@@ -40,7 +39,7 @@
                     <span class="message-time">{{ message.created }}</span>
                 </div>
                 <div class="other-message-body">{{ message.body }}</div>
-                {% if message.file %}
+                {% if message.file %} <!-- zobrazi file/obrazok -->
                     <div class="other-message-file">
                         <a href="{{ message.file }}"><img src="{{ message.file }}" width="50px"></a>
                     </div>
@@ -50,3 +49,4 @@
     {% endfor %}
     </div>
 {% endblock %}
+

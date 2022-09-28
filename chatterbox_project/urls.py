@@ -1,4 +1,5 @@
 """chatterbox_project URL Configuration
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
@@ -35,7 +36,8 @@ urlpatterns = [
     #PROFILES APLIKACE
     path('users/', profiles.views.profiles_list, name='profiles'),
     path('user/<pk>/', profiles.views.user_profile, name='profile'),
-    path('edituser/<pk>/', profiles.views.EditProfile.as_view(), name='editprofile'),
+    path('edituser/', profiles.views.edit_profile, name='editprofile'),
+    path('createprofile/', profiles.views.create_profile, name='createprofile'),
 
 
     #create room
@@ -53,3 +55,4 @@ urlpatterns = [
 
     path("__reload__/", include("django_browser_reload.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # add static
+
